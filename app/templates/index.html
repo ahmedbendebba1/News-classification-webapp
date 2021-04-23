@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>News classification</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="static/css/normalize.css">
+  <link rel="stylesheet" href="static/css/skeleton.css">
+  <link rel="stylesheet" href="static/css/custom.css">
+
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  <link rel="stylesheet" href="static/css/github-prettify-theme.css">
+  <script type="text/javascript">// <![CDATA[
+          function loading(){
+              $("#loading").show();
+              $("#content").hide();       
+          }
+  // ]]></script>
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
+
+</head>
+<body>
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link" href="#">Home</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="https://www.linkedin.com/ahmed-ben-debba/" target="_blank">Linkedin</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="https://github.com/ahmedbendebba1/" target="_blank">Github</a></li>
+
+
+        </ul>
+      </div>
+    </nav>
+
+
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- The above form looks like this -->
+<div class="docs-section" id="intro">
+<div class="container">
+<form action="{{ url_for('predict')}}"method="post">
+  <div class="row">
+	<h6 class="docs-header">News Classification - Logistec regression Serverless deployement</h6>
+      <p> Generate random news or type yours (up to 160 caracters), then use the Logistic regression to find predicted classes of the news.</p>	   
+      <input type="submit" class="button-primary" name="submit_button" value="Generate">
+  </div>
+  <textarea rows="6" class="u-full-width" name="text" maxlength="160" placeholder="Generate or write a headline" id="news">{{news}}</textarea>
+  <div class="row">
+  	<div class="eight columns">
+      <div id="loading"></div>
+      <div id="content">
+    	<input type="submit" name="submit_button" value="TF-IDF & Logistic Regression" onclick="loading();">
+
+      </div>
+	</div>
+	<div class="four columns">
+	<input type="submit" name="submit_button" value="Clear">
+	</div>
+  </div>
+
+  <ul>
+  <li>Top 3 predictions and associated probabilities
+    <ul>
+        {% for key, value in prediction.items() %}
+        <li>{{ key }} : {{ value }}</li>
+        {% endfor %}
+    </ul>
+  </li>
+  <li>True class {{real}}</li>
+  </ul>
+</form>
+</div>
+</div>
+
+<div class="container">
+    <!-- Examples -->
+    <div class="docs-section examples" id="examples">
+      <p class="example-description"> <a href="https://www.linkedin.com/ahmed-ben-debba" target="_blank">Ahmed</a></p>
+      <p class="example-description"> <font size="1">All news are generated randomly and this website is not responsible for the type or the content of these news.</font></p>
+
+    </div>
+    
+</div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
