@@ -1,0 +1,13 @@
+joblib
+pathlib
+flask
+Pillow
+gunicorn
+pyarrow
+numpy==1.16.5
+pandas==0.24.2
+# Install Torch with GPU when experimenting or training a model
+#torch==1.1.0
+# Use Torch CPU-only for inference only to have a light docker image
+https://download.pytorch.org/whl/cpu/torch-1.1.0-cp37-cp37m-linux_x86_64.whl
+scikit-learn==0.21.3
