@@ -38,7 +38,7 @@ data = pd.read_feather("app/data/dataset_inference")
 
 # Define API
 HOST = "0.0.0.0"
-PORT = os.environ.get("PORT", 8081)
+PORT = os.environ.get("PORT", 8080)
 
 
 @app.route("/")
