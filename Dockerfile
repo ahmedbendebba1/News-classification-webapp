@@ -1,8 +1,8 @@
-FROM python:3.7
+FROM python:3.7-slim-buster
 ADD . /app
 WORKDIR /app
-RUN pip install -r requirements.txt
-RUN python3 -m spacy download en_core_web_sm
+RUN pip install -r requirements.txt -r requirements_text.txt
+RUN python -m spacy download en_core_web_sm
 
 # for flask web server
 EXPOSE 8080
