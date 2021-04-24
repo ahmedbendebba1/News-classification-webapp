@@ -5,6 +5,9 @@ Train and deploy a news classifier based on Logistic Regression.
 
 ![alt text](images/webapp.jpg)
 
+# Architecture
+![alt text](images/architecture.jpg)
+
 
 # Running on cloud/local machine
 
