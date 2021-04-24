@@ -3,7 +3,7 @@ Train and deploy a news classifier based on Logistic Regression.
 
 - Serverless version: https://newsclassification-acv3odjjfa-ew.a.run.app/
 
-![alt text](webapp.jpg)
+![alt text](images/webapp.jpg)
 
 
 # Running on cloud/local machine
@@ -58,14 +58,14 @@ gcloud builds submit --tag gcr.io/PROJECT-ID/news_classifier
 
 From Google Run page, we will use the image `gcr.io/PROJECT-ID/news_classifier:latest` to run the app. Create a new service 
 
-![gcp](run.png)
+![gcp](images/run.png)
 
 Then enter the address of the image, choose other parameters as follows and deploy 
-![gcp1](run1.png)
+![gcp1](images/run1.png)
 
 After few seconds,  you will see a link to the app. 
 
-![gcp3](run3.png)
+![gcp3](images/run3.png)
 
 Serverless version may suffer from [**cold-start**](https://github.com/ahmetb/cloud-run-faq#cold-starts) if the service does not receive requests for a long time. 
 
