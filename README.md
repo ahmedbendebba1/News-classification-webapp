@@ -114,7 +114,7 @@ python3 baseline.py --model svc --exp_name svc_all --data dataset_processed
 
 The logs/metrics on test dataset will be saved in `sklearn_models/logs/` and the trained model will be saved in `sklearn_models/saved_models/`.
 
-Trained model is available for download at:
+Trained model is available for download at: https://github.com/ahmedbendebba1/News-classification-api/releases
 
 ---
 Ahmed Ben Debba
